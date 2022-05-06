@@ -1,18 +1,26 @@
 @import '../configuration/variables.scss';
 
-@media screen and (max-width: $height-phone) {
-  .app-footer {
+// scss only for phone
+
+@media screen and (max-width: $height-tablet) {
+  .app-footer-phone {
     width: 100vw;
     background: $grey;
     position: fixed;
     bottom: 0;
     .image-footer {
       padding: 0.5rem;
-      width: 50px;
+      width: 40px;
       height: auto;
     }
     .baco-logo {
       border-radius: 50%;
     }
+  }
+}
+
+@media screen and (min-width: $height-tablet) {
+  .app-footer-phone {
+    display: none;
   }
 }

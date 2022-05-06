@@ -1,0 +1,15 @@
+// container for phone
+
+@media screen and (min-width: $height-tablet){
+  .container-phone {
+    display: none;
+  }
+}
+
+// container for desktop
+
+@media screen and (max-width: $height-tablet){
+  .container-desktop {
+    display: none;
+  }
+}
