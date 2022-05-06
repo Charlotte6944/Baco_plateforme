@@ -1,0 +1,12 @@
+<div class="app-footer">
+  <div class="flex-justify-between p-0-1">
+    <% if user_signed_in? %>
+      <i class="fa-thin fa-user"></i>
+      <%= image_tag("baco.jpeg", :alt => "BACO logo", :class => "image-footer") %>
+    <% else %>
+      <%= image_tag("baco.jpeg", :alt => "BACO logo", :class => "image-footer baco-logo") %>
+    <% end %>
+    <%= image_tag("badminton.png", :alt => "icon user", :class => "image-footer") %>
+    <%= image_tag("userIcon.png", :alt => "icon user", :class => "image-footer") %>
+  </div>
+</div>

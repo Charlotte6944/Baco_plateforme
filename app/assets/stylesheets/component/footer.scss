@@ -1,0 +1,18 @@
+@import '../configuration/variables.scss';
+
+@media screen and (max-width: $height-phone) {
+  .app-footer {
+    width: 100vw;
+    background: $grey;
+    position: fixed;
+    bottom: 0;
+    .image-footer {
+      padding: 0.5rem;
+      width: 50px;
+      height: auto;
+    }
+    .baco-logo {
+      border-radius: 50%;
+    }
+  }
+}

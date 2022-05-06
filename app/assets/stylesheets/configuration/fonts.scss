@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap');
+@import './variables.scss';
+
+h1, h2, h3, h4, h5, h6, p {
+  font-family: $font-family;
+}
+
+h1 {
+  font-size: $size-2;
+  font-weight: 700;
+  color: $blue;
+}
+
+h2 {
+  font-size: $size-15;
+  font-weight: 600;
+  color: $blue;
+}
+
+h3 {
+  font-size: $size-125;
+  font-weight: 600;
+  color: $dark-black;
+}
+
+h4 {
+  font-size: $size-125;
+  font-weight: 400;
+  color: $dark-black;
+}
+
+p {
+  font-size: $size-1;
+  font-weight: 300;
+  color: $dark-black;
+}
+
+li {
+  font-family: $font-family;
+  font-size: $size-1;
+  color: $dark-black;
+}
+
+a:link {
+  text-decoration: none;
+  color: $black;
+  &:hover {
+    color: $blue;
+    transition: .5s;
+  }
+}

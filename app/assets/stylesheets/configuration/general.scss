@@ -1,0 +1,19 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.container-app-bad {
+  padding: 0.5rem;
+}
+
+// classes display
+.flex-justify-between {
+  display: flex;
+  justify-content: space-between;
+}
+
+// classes padding et margin
+.p-0-1 {
+  padding: 0rem 1rem;
+}
