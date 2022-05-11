@@ -9,6 +9,11 @@
 User.destroy_all
 
 User.create!(
+  nom: 'test',
+  prenom: 'test',
+  num_licence: 0,
+  adult?: true,
+  encadre?: true,
   email: 'test@test.com',
   password: '123456',
   password_confirmation: '123456'
