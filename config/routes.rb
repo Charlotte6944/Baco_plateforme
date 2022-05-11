@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   root to: 'pages#home'
-  devise_for :users
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  devise_for :users, controller: { sessions: 'users/sessions' }
+  devise_scope :user do
+    get 'users/show', to: 'users/sessions#show'
+  end
 end
