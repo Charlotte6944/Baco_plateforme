@@ -1,0 +1,27 @@
+<div class="navbar">
+  <div class="container-fluid">
+    <%= link_to "#", class: "navbar-brand" do %>
+      <%= image_tag("baco.jpeg", :alt => "BACO logo") %>
+    <% end %>
+
+    <div class="" id="navbarSupportedContent">
+      <ul class="flex-justify-between">
+        <% if user_signed_in? %>
+          <li class="nav-item">
+            <%= link_to "Messages", "#", class: "p-0-10" %>
+          </li>
+          <li class="flex-justify-between">
+            <div class="p-0-1" aria-labelledby="navbarDropdown">
+              <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+            </div>
+            <%= image_tag("badminton.png", :alt => "default's avatar", :class => "default_logo") %>
+          </li>
+        <% else %>
+          <li class="nav-item">
+            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>

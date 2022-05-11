@@ -1,0 +1,18 @@
+.navbar {
+  background-size: cover;
+  background: $white;
+  .container-fluid {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+  }
+}
+
+.navbar .navbar-brand img {
+  width: 70px;
+  border-radius: 50%;
+}
+
+.default_logo {
+  width: 50px;
+}
