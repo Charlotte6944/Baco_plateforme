@@ -1,4 +1,20 @@
 <div class="container-app-bad">
   <h1>Bienvenue sur le show de User</h1>
-  <%= current_user.nom %>
+
+  <div class="grid-3">
+
+    <div class="carte-user text-center">
+      <p><%= image_tag("baco.jpeg", :alt => "BACO logo", :class => "avatar") %></p>
+      <span><%= current_user.prenom %></span>
+      <span class="bold"><%= current_user.nom %></span>
+      <p><%= current_user.num_licence %></p>
+    </div>
+
+    <div>
+      <%= current_user.nom %>
+      <%= current_user.prenom %>
+    </div>
+
+  </div>
+
 </div>

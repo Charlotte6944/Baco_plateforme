@@ -9,8 +9,8 @@
 User.destroy_all
 
 User.create!(
-  nom: 'test',
-  prenom: 'test',
+  nom: 'MARION',
+  prenom: 'Charlotte',
   num_licence: 0,
   adult?: true,
   encadre?: true,

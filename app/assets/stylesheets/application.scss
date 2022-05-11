@@ -5,8 +5,11 @@
 @import "configuration/container-screen";
 
 // External library
+@import "bootstrap/scss/bootstrap";
+@import "font-awesome";
 
 // Your CSS partial
 @import "component/footer-phone";
 @import "component/footer-desktop";
 @import "component/navbar";
+@import "component/carte-user";

@@ -1,10 +1,24 @@
 body {
   margin: 0;
   padding: 0;
+  background-color: $white;
 }
 
 .container-app-bad {
-  padding: 0.5rem;
+  padding: 0rem 3rem;
+}
+
+li, ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.avatar {
+  width: 80px;
+  border-radius: 50%;
 }
 
 // classes display
@@ -22,15 +36,17 @@ body {
   padding: 0rem 10rem;
 }
 
-li, ul {
-  list-style: none;
+// grid style
+.grid-3 {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
 }
 
-a {
-  text-decoration: none;
+// text
+.text-center {
+  text-align: center;
 }
 
-.avatar {
-  width: 80px;
-  border-radius: 50%;
+.bold {
+  font-weight: bold;
 }
