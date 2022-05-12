@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.destroy_all
+Tournoi.destroy_all
 
 User.create!(
   nom: 'MARION',
@@ -17,4 +18,20 @@ User.create!(
   email: 'test@test.com',
   password: '123456',
   password_confirmation: '123456'
+)
+
+Tournoi.create!(
+  nom: 'Bacosun',
+  ville: 'Oullins',
+  date_tournoi: '11/06/2022',
+  inscription_max: '11/06/2022',
+  catégories: 'NC à D9'
+)
+
+Tournoi.create!(
+  nom: 'Tournoi des Lumières',
+  ville: 'Lyon',
+  date_tournoi: '17/11/2022',
+  inscription_max: '08/07/2022',
+  catégories: 'NC à D9'
 )
