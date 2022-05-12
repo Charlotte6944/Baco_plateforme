@@ -3,16 +3,19 @@
 // scss only for phone
 
 @media screen and (max-width: $height-tablet) {
-  .app-footer-desktop {
+  footer {
     display: none;
   }
 }
 
 @media screen and (min-width: $height-tablet) {
-  .app-footer-desktop {
+  footer {
     width: 100vw;
     background: $grey;
     position: fixed;
     bottom: 0;
+  }
+  .footer-color {
+    background-color: $grey;
   }
 }
