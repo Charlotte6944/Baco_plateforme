@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   devise_scope :user do
     get 'users/show', to: 'users/sessions#show'
   end
+  resources :tournois
 end

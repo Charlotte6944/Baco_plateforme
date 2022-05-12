@@ -1,0 +1,41 @@
+class TournoisController < ApplicationController
+  before_action :find_by_id, only: %i[destroy show edit update]
+  attr_accessor :show, :edit
+
+  def index
+    @tournois = Tournoi.all
+  end
+
+  def new
+    @tournoi = Tournoi.new
+  end
+
+  def create
+    @tournoi = Tournoi.new(tournoi_params)
+    if @tournoi.save
+      redirect_to tournoi _path(@tournoi)
+    else
+      render :new
+    end
+  end
+
+  def destroy
+    @tournoi.destroy
+    redirect_to tournoi s_path
+  end
+
+  def update
+    @tournoi.update(tournoi_params)
+    redirect_to tournoi _path(@tournoi)
+  end
+
+  private
+
+  def tournoi_params
+    params.require(:tournoi).permit(:nom, :ville, :date_tournoi, :inscription_max, :catégories)
+  end
+
+  def find_by_id
+    @tournoi = Tournoi.find(params[:id])
+  end
+end
