@@ -7,6 +7,7 @@ class User < ApplicationRecord
   validates_uniqueness_of :num_licence, allow_blank: true
   enum role: %i[admin dirigeant joueur]
   after_initialize :set_default_role
+  has_many :inscriptions_tournois
 
   private
 
