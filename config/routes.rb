@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     get 'users/show', to: 'users/sessions#show'
   end
   resources :tournois
+  resources :inscriptions_tournois
 
   match '*path' => redirect('/'), via: :get
 end
