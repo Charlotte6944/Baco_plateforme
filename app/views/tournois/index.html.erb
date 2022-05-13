@@ -1,25 +1,32 @@
 <div class="container">
   <div class="d-flex justify-content-between">
-    <h1>Liste des tournois</h1>
+    <h1>Inscription aux tournois adultes</h1>
     <a href="#" class="btn btn-primary">Créer un tournoi</a>
   </div>
-  <% @tournois.each do |tournoi| %>
-    <div class="card text-center mb-4">
-      <div class="card-header">
-        <%= tournoi.nom %>
-        <%= tournoi.ville %>
-      </div>
-      <div class="card-body">
-        <h5 class="card-title">
-          <%= tournoi.date_tournoi %>
-        </h5>
-        <p class="card-text">Inscription jusuq'au: <%= tournoi.date_tournoi %> /p>
-        <br>
-        <a href="#" class="btn btn-primary">Je m'inscis</a>
-        <a href="#" class="btn btn-primary">Je me désinscris</a>
-        <a href="#" class="btn btn-primary">Supprimer le tournoi</a>
-      </div>
-      <div class="card-footer text-muted">2 days ago</div>
+  <div class="row">
+    <div class="col-sm">
+      <%= render 'shared/textes/Inscription_tournois_adultes' %>
     </div>
-  <% end %>
+    <div class="col-sm">
+      <% @tournois.each do |tournoi| %>
+        <div class="card text-center mb-4">
+          <div class="card-header">
+            <%= tournoi.nom %>
+            <%= tournoi.ville %>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">
+              <%= tournoi.date_tournoi %>
+            </h5>
+            <p class="card-text">Inscription jusuq'au: <%= tournoi.date_tournoi %> /p>
+            <br>
+            <a href="#" class="btn btn-primary">Je m'inscis</a>
+            <a href="#" class="btn btn-primary">Je me désinscris</a>
+            <a href="#" class="btn btn-primary">Supprimer le tournoi</a>
+          </div>
+          <div class="card-footer text-muted">2 days ago</div>
+        </div>
+      <% end %>
+    </div>
+  </div>
 </div>
