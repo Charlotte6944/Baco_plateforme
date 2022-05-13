@@ -8,8 +8,14 @@ body {
   padding: 0rem 3rem;
 }
 
-li, ul {
-  list-style: none;
+// link
+
+.style-type-circle {
+  list-style-type: circle;
+}
+
+.style-type-none {
+  list-style-type: none;
 }
 
 a {
