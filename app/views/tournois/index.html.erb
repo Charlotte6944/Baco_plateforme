@@ -1,7 +1,9 @@
 <div class="container">
   <div class="d-flex justify-content-between">
     <h1>Inscription aux tournois adultes</h1>
-    <a href="#" class="btn btn-primary">Créer un tournoi</a>
+    <% if current_user.role == 'admin' %>
+      <a href="#" class="btn btn-primary">Créer un tournoi</a>
+    <% end %>
   </div>
   <div class="row">
     <div class="col-sm">
@@ -22,7 +24,9 @@
             <br>
             <a href="#" class="btn btn-primary">Je m'inscis</a>
             <a href="#" class="btn btn-primary">Je me désinscris</a>
-            <a href="#" class="btn btn-primary">Supprimer le tournoi</a>
+            <% if current_user.role == 'admin' %>
+              <a href="#" class="btn btn-primary">Supprimer le tournoi</a>
+            <% end %>
           </div>
           <div class="card-footer text-muted">2 days ago</div>
         </div>

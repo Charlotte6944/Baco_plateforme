@@ -9,13 +9,25 @@
 User.destroy_all
 Tournoi.destroy_all
 
-User.create!(
-  nom: 'MARION',
+user_admin = User.create!(
+  nom: 'ADMIN',
   prenom: 'Charlotte',
   num_licence: 0,
   adult?: true,
   encadre?: true,
   email: 'test@test.com',
+  password: '123456',
+  password_confirmation: '123456',
+  role: :admin
+)
+
+User.create!(
+  nom: 'JOUEUR',
+  prenom: 'Charlotte',
+  num_licence: 1,
+  adult?: true,
+  encadre?: true,
+  email: 'test@test.fr',
   password: '123456',
   password_confirmation: '123456'
 )
