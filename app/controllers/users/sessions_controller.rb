@@ -4,6 +4,10 @@ class Users::SessionsController < Devise::SessionsController
   # before_action :configure_sign_in_params, only: [:create]
 
   def show
+    @inscriptions_tournoi_user = []
+    InscriptionsTournoi.all.map do |inscription|
+      @inscriptions_tournoi_user << inscription if inscription.user_id == current_user.id
+    end
   end
 
   # GET /resource/sign_in

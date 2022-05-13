@@ -1,4 +1,4 @@
 class InscriptionsTournoi < ApplicationRecord
-  belongs_to :user_id
-  belongs_to :tournoi_id
+  belongs_to :user
+  belongs_to :tournoi
 end

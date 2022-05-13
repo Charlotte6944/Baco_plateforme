@@ -1,18 +1,60 @@
 <div class="container-app-bad">
-  <h1>Bienvenue sur le show de User</h1>
 
-  <div class="grid-3">
+  <div class="grid-3 pt-4">
 
     <div class="carte-user text-center">
       <p><%= image_tag("baco.jpeg", :alt => "BACO logo", :class => "avatar") %></p>
       <span><%= current_user.prenom %></span>
       <span class="bold"><%= current_user.nom %></span>
-      <p><%= current_user.num_licence %></p>
+      <p>Numéro de licence: <%= current_user.num_licence %></p>
     </div>
 
-    <div>
-    </div>
+    <div class="carte-user text-center">
+      <h2 class="text-center">Tes tournois</h2>
+      <% if @inscriptions_tournoi_user.empty? %>
+        <p>Tu n'as pas de tournois prévus!!</p>
+      <% else %>
+        <div class="col-sm">
+          <% @inscriptions_tournoi_user.each do |inscription| %>
+            <div class="card text-center mb-4">
+              <% if inscription.date_inscription < Time.now %>
+                <div class="card-header">
+                  <%= inscription.tournoi.nom %>
+                  <%= inscription.tournoi.ville %>
+                  <%= inscription.date_inscription %>
+                </div>
+                <div class="card-body">
+                  <div class="card-title">
+                    <%= inscription.tournoi.nom %>
+                    <%= inscription.tournoi.ville %>
+                    <%= inscription.date_inscription %>
+                  </div>
+                </div>
+              <% else %>
+                <div class="card-header">
+                  <%= inscription.tournoi.nom %>
+                  <%= inscription.tournoi.ville %>
+                  <%= inscription.date_inscription %>
+                  <%= inscription.validation_inscription_tournoi %>
 
+                </div>
+                <div class="card-body">
+                  <div class="card-title">
+                    <%= inscription.tournoi.nom %>
+                    <%= inscription.tournoi.ville %>
+                    <%= inscription.date_inscription %>
+                    <% if inscription.validation_inscription_tournoi %>
+                      <p>Inscription envoyée au tournoi par le Baco.</p>
+                    <% else %>
+                      <p>Inscription prise en compte en attente d'envoie par le Baco à l'organisateur.</p>
+                    <% end %>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
   </div>
-
 </div>

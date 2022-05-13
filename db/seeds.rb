@@ -6,10 +6,11 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+InscriptionsTournoi.destroy_all
 User.destroy_all
 Tournoi.destroy_all
 
-user_admin = User.create!(
+User.create!(
   nom: 'ADMIN',
   prenom: 'Charlotte',
   num_licence: 0,
@@ -46,4 +47,27 @@ Tournoi.create!(
   date_tournoi: '17/11/2022',
   inscription_max: '08/07/2022',
   catégories: 'NC à D9'
+)
+
+# creation inscriptions tournois
+
+InscriptionsTournoi.create!(
+  date_inscription: '13/07/2022',
+  user_id: User.first.id,
+  tournoi_id: Tournoi.first.id,
+  validation_inscription_tournoi: true
+)
+
+InscriptionsTournoi.create!(
+  date_inscription: '26/05/2022',
+  user_id: User.first.id,
+  tournoi_id: Tournoi.second.id,
+  validation_inscription_tournoi: false
+)
+
+InscriptionsTournoi.create!(
+  date_inscription: '13/07/2022',
+  user_id: User.second.id,
+  tournoi_id: Tournoi.second.id,
+  validation_inscription_tournoi: false
 )
