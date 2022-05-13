@@ -1,4 +1,5 @@
 class TournoisController < ApplicationController
+  before_action :authenticate_user!, except: [:index]
   before_action :find_by_id, only: %i[destroy show edit update]
   attr_accessor :show, :edit
 
