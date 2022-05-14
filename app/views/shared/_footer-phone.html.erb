@@ -1,12 +1,7 @@
 <div class="app-footer-phone">
   <div class="flex-justify-between p-0-1">
-    <% if user_signed_in? %>
-      <i class="fa-thin fa-user"></i>
-      <%= image_tag("baco.jpeg", :alt => "BACO logo", :class => "image-footer") %>
-    <% else %>
-      <%= image_tag("baco.jpeg", :alt => "BACO logo", :class => "image-footer baco-logo") %>
-    <% end %>
-    <%= image_tag("badminton.png", :alt => "icon user", :class => "image-footer") %>
-    <%= image_tag("userIcon.png", :alt => "icon user", :class => "image-footer") %>
+    <%= link_to image_tag("baco.jpeg", { class: 'image-footer baco-logo' }), { action: 'home', controller: '/pages' } %>
+    <%= link_to image_tag("badminton.png", { class: 'image-footer', alt: "logo volant de badminton pour accès à la liste des tournois" }), { action: 'index', controller: '/tournois' } %>
+    <%= link_to image_tag("userIcon.png", { class: 'image-footer', alt: "icon de l'utilisateur" }), user_session_path %>
   </div>
 </div>
