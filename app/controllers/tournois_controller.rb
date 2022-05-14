@@ -22,12 +22,12 @@ class TournoisController < ApplicationController
 
   def destroy
     @tournoi.destroy
-    redirect_to tournoi s_path
+    redirect_to tournois_path, :notice => "Le tournoi a bien été supprimé!"
   end
 
   def update
     @tournoi.update(tournoi_params)
-    redirect_to tournoi _path(@tournoi)
+    redirect_to tournoi_path(@tournoi)
   end
 
   private
