@@ -1,0 +1,21 @@
+fr:
+  simple_form:
+    "yes": 'Yes'
+    "no": 'No'
+    required:
+      text: 'required'
+      mark: '*'
+
+    error_notification:
+      default_message: "Please review the problems below:"
+
+    labels:
+      defaults:
+        nom: "Nom"
+        prenom: "Prénom"
+        ville: "Ville"
+        date_tournoi: "Date du tournoi"
+        inscription_max: "Date maximum d'inscription"
+        catégories: "Catégories acceptées au tournoi"
+        date_inscription: "Date d'inscription"
+        validation_inscription_tournoi: "Validation effectuée par le Baco"

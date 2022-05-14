@@ -1,0 +1,14 @@
+<div class="container">
+  <h1>Créer un nouveau tournoi</h1>
+  <%= simple_form_for @tournoi, wrapper: :vertical_form do |f| %>
+    <%= f.input :nom, placeholder: 'Nom du tournoi' %>
+    <%= f.input :ville, placeholder: 'Lieu où se déroule le tournoi' %>
+    <%= f.input :catégories, placeholder: "Catégories possible pour s'inscrire" %>
+    <%= f.input :date_tournoi, as: :string, input_html: {class: 'form-datepicker', placeholder: '12/08/2022'} %>
+    <%= f.input :inscription_max, as: :string, input_html: {class: 'form-datepicker', placeholder: '12/08/2022'} %>
+    <div class="text-center">
+      <%= link_to 'Retour à la liste des tournois', tournois_path, class: 'btn btn-primary mt-3'%>
+      <%= f.button :submit, 'Créer le tournoi', class: 'btn btn-primary mt-3'%>
+    </div>
+  <% end %>
+</div>

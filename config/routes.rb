@@ -15,7 +15,7 @@ Rails.application.routes.draw do
     resources :inscriptions_tournois, only: %i[index show]
   end
 
-  resources :tournois
+  resources :tournois, only: %i[index new create destroy update]
   resources :inscriptions_tournois
 
   match '*path' => redirect('/'), via: :get

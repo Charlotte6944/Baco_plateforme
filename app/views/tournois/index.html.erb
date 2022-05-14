@@ -2,7 +2,7 @@
   <div class="d-flex justify-content-between">
     <h1>Inscription aux tournois adultes</h1>
     <% if user_signed_in? && current_user.role == 'admin' %>
-      <a href="#" class="btn btn-primary">Créer un tournoi</a>
+      <%= link_to 'Créer un tournoi', new_tournoi_path, class: 'btn btn-primary'%>
     <% end %>
   </div>
   <div class="row">
@@ -19,8 +19,9 @@
           <div class="card-body">
             <h5 class="card-title">
               <%= tournoi.date_tournoi %>
+              <%= tournoi.catégories %>
             </h5>
-            <p class="card-text">Inscription jusuq'au: <%= tournoi.date_tournoi %> /p>
+            <p class="card-text">Inscription jusuq'au: <%= tournoi.date_tournoi %></p>
             <br>
             <a href="#" class="btn btn-primary">Je m'inscis</a>
             <a href="#" class="btn btn-primary">Je me désinscris</a>

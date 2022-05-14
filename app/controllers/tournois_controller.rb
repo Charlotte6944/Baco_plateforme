@@ -14,7 +14,7 @@ class TournoisController < ApplicationController
   def create
     @tournoi = Tournoi.new(tournoi_params)
     if @tournoi.save
-      redirect_to tournoi _path(@tournoi)
+      redirect_to tournois_path
     else
       render :new
     end

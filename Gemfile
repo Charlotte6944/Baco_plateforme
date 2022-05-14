@@ -27,12 +27,14 @@ gem 'jbuilder', '~> 2.7'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
+gem 'bootstrap-datepicker-rails'
 
 # Use Devise for authentication
 gem 'devise'
 
 gem 'font-awesome-sass'
 gem 'simple_form'
+gem 'simple-form-datepicker', '~> 0.1.3'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
