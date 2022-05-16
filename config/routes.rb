@@ -10,6 +10,10 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :tournois do
+    resources :inscriptions_tournois, only: %i[new create destroy]
+  end
+
   # ou scope
   namespace :admin do
     resources :inscriptions_tournois, only: %i[index show]

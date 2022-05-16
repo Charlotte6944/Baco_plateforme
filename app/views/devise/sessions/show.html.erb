@@ -15,42 +15,28 @@
       <% else %>
         <div class="col-sm">
           <% @inscriptions_tournoi_user.each do |inscription| %>
-            <div class="card text-center mb-4">
-              <% if inscription.date_inscription < Time.now %>
+          <%# vérifier si la condition si dessous fonctionne bien j'en doute %>
+            <% if inscription.tournoi.inscription_max > Time.now || inscription.tournoi.inscription_max = Time.now %>
+              <div class="card text-center mb-4">
                 <div class="card-header">
+                  <%= inscription.tournoi.inscription_max %>
                   <%= inscription.tournoi.nom %>
                   <%= inscription.tournoi.ville %>
-                  <%= inscription.date_inscription %>
                 </div>
                 <div class="card-body">
-                  <div class="card-title">
+                  <h5 class="card-title">
                     <%= inscription.tournoi.nom %>
-                    <%= inscription.tournoi.ville %>
-                    <%= inscription.date_inscription %>
-                  </div>
+                  </h5>
                 </div>
-              <% else %>
-                <div class="card-header">
-                  <%= inscription.tournoi.nom %>
-                  <%= inscription.tournoi.ville %>
-                  <%= inscription.date_inscription %>
-                  <%= inscription.validation_inscription_tournoi %>
-
+                <div class="card-footer text-muted">
+                  <% if !inscription.validation_inscription_tournoi %>
+                    <a href="#" class="btn btn-primary">Se désinscrire</a>
+                  <% else %>
+                    <p>Pour annuler votre inscription, merci de contacter le Baco pour avoir la marche à suivre.</p>
+                  <% end %>
                 </div>
-                <div class="card-body">
-                  <div class="card-title">
-                    <%= inscription.tournoi.nom %>
-                    <%= inscription.tournoi.ville %>
-                    <%= inscription.date_inscription %>
-                    <% if inscription.validation_inscription_tournoi %>
-                      <p>Inscription envoyée au tournoi par le Baco.</p>
-                    <% else %>
-                      <p>Inscription prise en compte en attente d'envoie par le Baco à l'organisateur.</p>
-                    <% end %>
-                  </div>
-                </div>
-              <% end %>
-            </div>
+              </div>
+            <% end %>
           <% end %>
         </div>
       <% end %>

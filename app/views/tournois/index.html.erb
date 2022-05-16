@@ -13,28 +13,30 @@
     </div>
     <div class="col-sm">
       <% @tournois.each do |tournoi| %>
-        <div class="card text-center mb-4">
-          <div class="card-header">
-            <%= tournoi.nom %>
-            <%= tournoi.ville %>
+        <% if tournoi.date_tournoi > Date.today %>
+          <div class="card text-center mb-4">
+            <div class="card-header">
+              <%= tournoi.nom %>
+              <%= tournoi.ville %>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">
+                <%= tournoi.date_tournoi %>
+                <%= tournoi.catégories %>
+              </h5>
+              <p class="card-text">Inscription jusuq'au: <%= tournoi.inscription_max %></p>
+              <br>
+              <%= link_to "Je m'inscris", tournoi_inscriptions_tournois_path(tournoi), class: 'btn btn-primary', method: :post %>
+              <a href="#" class="btn btn-primary">Je me désinscris</a>
+              <% if user_signed_in? && current_user.role == 'admin' %>
+                <%= link_to 'Supprimer le tournoi', tournoi_path(tournoi), class: 'btn btn-primary', confirmation: 'Etes-vous sur de vouloir supprimer ce tournoi?', method: :delete %>
+              <% end %>
+            </div>
+            <div class="card-footer text-muted">
+              <p>Il te reste <%= (tournoi.inscription_max - Date.today).to_i %> jours pour t'inscrire!</p>
+            </div>
           </div>
-          <div class="card-body">
-            <h5 class="card-title">
-              <%= tournoi.date_tournoi %>
-              <%= tournoi.catégories %>
-            </h5>
-            <p class="card-text">Inscription jusuq'au: <%= tournoi.inscription_max %></p>
-            <br>
-            <a href="#" class="btn btn-primary">Je m'inscis</a>
-            <a href="#" class="btn btn-primary">Je me désinscris</a>
-            <% if user_signed_in? && current_user.role == 'admin' %>
-              <%= link_to 'Supprimer le tournoi', tournoi_path(tournoi), class: 'btn btn-primary', confirmation: 'Etes-vous sur de vouloir supprimer ce tournoi?', method: :delete %>
-            <% end %>
-          </div>
-          <div class="card-footer text-muted">
-            <p>Il te reste <%= (tournoi.inscription_max - Date.today).to_i %> jours pour t'inscrire!</p>
-          </div>
-        </div>
+        <% end %>
       <% end %>
     </div>
   </div>

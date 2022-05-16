@@ -5,6 +5,8 @@ class TournoisController < ApplicationController
 
   def index
     @tournois = Tournoi.all
+
+    # @inscription = InscriptionsTournoi.new(date_inscription: Date.today, user_id: current_user.id, tournoi_id: params[:tournoi_id])
   end
 
   def new

@@ -11,12 +11,14 @@ class InscriptionsTournoisController < ApplicationController
   end
 
   def create
-    @inscriptions_tournoi = InscriptionsTournoi.new(InscriptionsTournoi_params)
-    if @InscriptionsTournoi.save
-      redirect_to InscriptionsTournoi_path(@InscriptionsTournoi)
-    else
-      render :new
-    end
+    @inscriptions_tournoi = InscriptionsTournoi.new(
+      date_inscription: Date.today,
+      validation_inscription_tournoi: false,
+      tournoi_id: params[:tournoi_id],
+      user_id: current_user.id
+    )
+    @inscriptions_tournoi.save
+    redirect_to tournois_path
   end
 
   def destroy
