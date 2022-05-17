@@ -32,7 +32,11 @@
               <% end %>
             </div>
             <div class="card-footer text-muted">
-              <p>Il te reste <%= (tournoi.inscription_max - Date.today).to_i %> jours pour t'inscrire!</p>
+              <% if (tournoi.inscription_max - Date.today).to_i > 0 %>
+                <p>Il te reste <%= (tournoi.inscription_max - Date.today).to_i  %> jours pour t'inscrire!</p>
+              <% else %>
+                <p>Tu ne peux plus t'inscrire à ce tournoi!</p>
+              <% end %>
             </div>
           </div>
         <% end %>
