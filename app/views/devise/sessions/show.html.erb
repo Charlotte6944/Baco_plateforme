@@ -15,7 +15,6 @@
       <% else %>
         <div class="col-sm">
           <% @inscriptions_tournoi_user.each do |inscription| %>
-          <%# vérifier si la condition si dessous fonctionne bien j'en doute %>
             <% if inscription.tournoi.inscription_max > Time.now || inscription.tournoi.inscription_max = Time.now %>
               <div class="card text-center mb-4">
                 <div class="card-header">
@@ -30,7 +29,7 @@
                 </div>
                 <div class="card-footer text-muted">
                   <% if !inscription.validation_inscription_tournoi %>
-                    <a href="#" class="btn btn-primary">Se désinscrire</a>
+                    <%= link_to "Se désinscrire", inscriptions_tournoi_path(inscription), class: 'btn btn-primary', method: :delete %>
                   <% else %>
                     <p>Pour annuler votre inscription, merci de contacter le Baco pour avoir la marche à suivre.</p>
                   <% end %>

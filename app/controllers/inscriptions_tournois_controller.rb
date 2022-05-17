@@ -23,8 +23,8 @@ class InscriptionsTournoisController < ApplicationController
   end
 
   def destroy
-    @InscriptionsTournoi.destroy
-    redirect_to InscriptionsTournois_path
+    @inscriptions_tournoi.destroy
+    redirect_to users_show_path
   end
 
   def update
@@ -40,6 +40,6 @@ class InscriptionsTournoisController < ApplicationController
 
   def find_by_id
     @inscriptions_tournoi = InscriptionsTournoi.find(params[:id])
-    authorize &inscriptions_tournoi
+    authorize @inscriptions_tournoi
   end
 end

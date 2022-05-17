@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   end
 
   resources :tournois do
-    resources :inscriptions_tournois, only: %i[new create destroy]
+    resources :inscriptions_tournois, only: %i[new create]
   end
 
   # ou scope
