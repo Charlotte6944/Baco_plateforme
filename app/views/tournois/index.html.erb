@@ -2,7 +2,7 @@
 
   <div class="d-flex justify-content-between">
     <h1>Inscription aux tournois adultes</h1>
-    <% if user_signed_in? && current_user.role == 'admin' %>
+    <% if policy(@tournois).new? %>
       <%= link_to 'Créer un tournoi', new_tournoi_path, class: 'btn btn-primary'%>
     <% end %>
   </div>
@@ -28,7 +28,7 @@
               <br>
               <%= link_to "Je m'inscris", tournoi_inscriptions_tournois_path(tournoi), class: 'btn btn-primary', method: :post %>
               <a href="#" class="btn btn-primary">Je me désinscris</a>
-              <% if user_signed_in? && current_user.role == 'admin' %>
+              <% if policy(tournoi).destroy? %>
                 <%= link_to 'Supprimer le tournoi', tournoi_path(tournoi), class: 'btn btn-primary', confirmation: 'Etes-vous sur de vouloir supprimer ce tournoi?', method: :delete %>
               <% end %>
             </div>

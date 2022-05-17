@@ -4,13 +4,12 @@ class TournoisController < ApplicationController
   attr_accessor :show, :edit
 
   def index
-    @tournois = Tournoi.all
-
-    # @inscription = InscriptionsTournoi.new(date_inscription: Date.today, user_id: current_user.id, tournoi_id: params[:tournoi_id])
+    @tournois = policy_scope(Tournoi)
   end
 
   def new
     @tournoi = Tournoi.new
+    authorize @tournoi
   end
 
   def create
@@ -20,16 +19,19 @@ class TournoisController < ApplicationController
     else
       render :new
     end
+    authorize @tournoi
   end
 
   def destroy
     @tournoi.destroy
     redirect_to tournois_path, :notice => "Le tournoi a bien été supprimé!"
+    authorize @tournoi
   end
 
   def update
     @tournoi.update(tournoi_params)
     redirect_to tournoi_path(@tournoi)
+    authorize @tournoi
   end
 
   private
@@ -40,5 +42,6 @@ class TournoisController < ApplicationController
 
   def find_by_id
     @tournoi = Tournoi.find(params[:id])
+    authorize @tournoi
   end
 end
