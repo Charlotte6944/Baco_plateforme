@@ -17,6 +17,7 @@ class InscriptionsTournoisController < ApplicationController
       tournoi_id: params[:tournoi_id],
       user_id: current_user.id
     )
+    authorize @inscriptions_tournoi
     @inscriptions_tournoi.save
     redirect_to tournois_path
   end
@@ -39,5 +40,6 @@ class InscriptionsTournoisController < ApplicationController
 
   def find_by_id
     @inscriptions_tournoi = InscriptionsTournoi.find(params[:id])
+    authorize &inscriptions_tournoi
   end
 end
