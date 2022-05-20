@@ -28,7 +28,7 @@
               <br>
               <%= link_to "Je m'inscris", tournoi_inscriptions_tournois_path(tournoi), class: 'btn btn-primary', method: :post %>
               <% if policy(tournoi).destroy? %>
-                <%= link_to 'Supprimer le tournoi', tournoi_path(tournoi), class: 'btn btn-primary', confirmation: 'Etes-vous sur de vouloir supprimer ce tournoi?', method: :delete %>
+                <%= link_to 'Supprimer le tournoi', tournoi_path(tournoi), class: 'btn btn-primary', method: :delete %>
               <% end %>
             </div>
             <div class="card-footer text-muted">

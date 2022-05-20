@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_05_13_145952) do
+ActiveRecord::Schema.define(version: 2022_05_20_192232) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,11 @@ ActiveRecord::Schema.define(version: 2022_05_13_145952) do
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "user_id"
     t.bigint "tournoi_id"
+    t.integer "nombre_tableau"
+    t.integer "tarif"
+    t.boolean "simple"
+    t.boolean "double"
+    t.boolean "mixte"
     t.index ["tournoi_id"], name: "index_inscriptions_tournois_on_tournoi_id"
     t.index ["user_id"], name: "index_inscriptions_tournois_on_user_id"
   end
@@ -34,6 +39,13 @@ ActiveRecord::Schema.define(version: 2022_05_13_145952) do
     t.string "catégories"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.date "date_simple"
+    t.date "date_double"
+    t.date "date_mixte"
+    t.integer "tarif_1"
+    t.integer "tarif_2"
+    t.integer "tarif_3"
+    t.string "url_tournoi"
   end
 
   create_table "users", force: :cascade do |t|
