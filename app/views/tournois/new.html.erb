@@ -4,8 +4,10 @@
     <%= f.input :nom, placeholder: 'Nom du tournoi' %>
     <%= f.input :ville, placeholder: 'Lieu où se déroule le tournoi' %>
     <%= f.input :catégories, placeholder: "Catégories possible pour s'inscrire" %>
-    <%= f.input :date_tournoi, as: :string, input_html: {class: 'form-datepicker', placeholder: '12/08/2022'} %>
-    <%= f.input :inscription_max, as: :string, input_html: {class: 'form-datepicker', placeholder: '12/08/2022'} %>
+    <%= f.input :date_debut_tournoi, as: :date, html5: true %>
+    <%= f.input :date_fin_tournoi, as: :date, html5: true %>
+    <%= f.input :inscription_max, as: :date, html5: true %>
+
     <div class="text-center">
       <%= link_to 'Retour à la liste des tournois', tournois_path, class: 'btn btn-primary mt-3'%>
       <%= f.button :submit, 'Créer le tournoi', class: 'btn btn-primary mt-3'%>

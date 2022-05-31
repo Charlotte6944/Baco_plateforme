@@ -37,7 +37,7 @@ class TournoisController < ApplicationController
   private
 
   def tournoi_params
-    params.require(:tournoi).permit(:nom, :ville, :date_tournoi, :inscription_max, :catégories)
+    params.require(:tournoi).permit(:nom, :ville, :date_debut_tournoi, :date_fin_tournoi, :inscription_max, :catégories)
   end
 
   def find_by_id
