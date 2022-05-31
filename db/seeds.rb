@@ -36,17 +36,45 @@ User.create!(
 Tournoi.create!(
   nom: 'Bacosun',
   ville: 'Oullins',
-  date_tournoi: '11/06/2022',
+  date_debut_tournoi: '11/06/2022',
+  date_fin_tournoi: '12/06/2022',
   inscription_max: '11/06/2022',
-  catégories: 'NC à D9'
+  catégories: 'NC à D9',
+  date_simple: '11/06/2022',
+  date_double: '12/06/2022',
+  date_mixte: '11/06/2022',
+  tarif_1: 18,
+  tarif_2: 20,
+  tarif_3: 0,
+  url_tournoi: 'http://www.badiste.fr/tournoi-badminton/bacosun-2022-oullins-13568.html'
 )
 
 Tournoi.create!(
   nom: 'Tournoi des Lumières',
   ville: 'Lyon',
-  date_tournoi: '17/11/2022',
-  inscription_max: '08/07/2022',
-  catégories: 'NC à D9'
+  date_debut_tournoi: '29/10/2022',
+  date_fin_tournoi: '31/10/2022',
+  inscription_max: '11/09/2022',
+  catégories: 'NC à D9',
+  date_simple: '29/10/2022',
+  date_double: '31/10/2022',
+  date_mixte: '11/9/2022',
+  tarif_1: 20,
+  tarif_2: 25,
+  tarif_3: 30,
+  url_tournoi: 'http://www.badiste.fr/tournoi-badminton/22-me-tournoi-international-du-guignol-ecobad-lyon-13919.html'
+)
+
+Tournoi.create!(
+  nom: 'Tournoi de simple',
+  ville: 'Bron',
+  date_debut_tournoi: '19/07/2022',
+  date_fin_tournoi: '19/07/2022',
+  inscription_max: '19/06/2022',
+  catégories: 'NC à D9',
+  date_simple: '19/07/2022',
+  tarif_1: 20,
+  url_tournoi: 'http://www.badiste.fr/tournoi-badminton/22-me-tournoi-international-du-guignol-ecobad-lyon-13919.html'
 )
 
 # creation inscriptions tournois

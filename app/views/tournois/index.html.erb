@@ -13,7 +13,7 @@
     </div>
     <div class="col-sm">
       <% @tournois.each do |tournoi| %>
-        <% if tournoi.date_tournoi > Date.today %>
+        <% if tournoi.date_debut_tournoi > Date.today %>
           <div class="card text-center mb-4">
             <div class="card-header">
               <%= tournoi.nom %>
@@ -21,10 +21,20 @@
             </div>
             <div class="card-body">
               <h5 class="card-title">
-                <%= tournoi.date_tournoi %>
+                <%= tournoi.date_debut_tournoi %>
                 <%= tournoi.catégories %>
               </h5>
+              <% if tournoi.date_simple.present? %>
+                <p class="card-text">Simple le: <%= tournoi.date_simple %></p>
+              <% end %>
+              <% if tournoi.date_double.present? %>
+                <p class="card-text">Double le: <%= tournoi.date_double %></p>
+              <% end %>
+              <% if tournoi.date_mixte.present? %>
+                <p class="card-text">Mixte le: <%= tournoi.date_mixte %></p>
+              <% end %>
               <p class="card-text">Inscription jusuq'au: <%= tournoi.inscription_max %></p>
+              <%= link_to 'Clique ici pour voir la description du tournoi sur badiste', tournoi.url_tournoi, target: "_blank" %>
               <br>
               <%= link_to "Je m'inscris", tournoi_inscriptions_tournois_path(tournoi), class: 'btn btn-primary', method: :post %>
               <% if policy(tournoi).destroy? %>
