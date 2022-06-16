@@ -83,19 +83,34 @@ InscriptionsTournoi.create!(
   date_inscription: '13/07/2022',
   user_id: User.first.id,
   tournoi_id: Tournoi.first.id,
-  validation_inscription_tournoi: true
+  validation_inscription_tournoi: true,
+  nombre_tableau: 2,
+  tarif: 20,
+  simple: true,
+  double: true,
+  mixte: false
 )
 
 InscriptionsTournoi.create!(
   date_inscription: '26/05/2022',
   user_id: User.first.id,
   tournoi_id: Tournoi.second.id,
-  validation_inscription_tournoi: false
+  validation_inscription_tournoi: false,
+  nombre_tableau: 2,
+  tarif: 25,
+  simple: true,
+  double: true,
+  mixte: false
 )
 
 InscriptionsTournoi.create!(
   date_inscription: '13/07/2022',
   user_id: User.second.id,
   tournoi_id: Tournoi.second.id,
-  validation_inscription_tournoi: false
+  validation_inscription_tournoi: false,
+  nombre_tableau: 1,
+  tarif: 20,
+  simple: true,
+  double: false,
+  mixte: false
 )

@@ -7,19 +7,22 @@ class InscriptionsTournoisController < ApplicationController
   end
 
   def new
+    @tournoi = Tournoi.find(params[:tournoi_id])
     @inscriptions_tournoi = InscriptionsTournoi.new
+    authorize @inscriptions_tournoi
   end
 
   def create
+    @tournoi = Tournoi.find(params[:tournoi_id])
     @inscriptions_tournoi = InscriptionsTournoi.new(
       date_inscription: Date.today,
       validation_inscription_tournoi: false,
-      tournoi_id: params[:tournoi_id],
+      tournoi_id: @tournoi.id,
       user_id: current_user.id
     )
     authorize @inscriptions_tournoi
     @inscriptions_tournoi.save
-    redirect_to tournois_path
+    redirect_to users_show_path
   end
 
   def destroy

@@ -8,6 +8,7 @@ class User < ApplicationRecord
   enum role: %i[admin dirigeant joueur]
   after_initialize :set_default_role
   has_many :inscriptions_tournois, dependent: :destroy
+  has_and_belongs_to_many :tournois, dependent: :destroy
 
   private
 

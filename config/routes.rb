@@ -5,8 +5,8 @@ Rails.application.routes.draw do
     get 'users/show', to: 'users/sessions#show'
   end
   resources :users do
-    resources :inscriptions_tournois do
-      resources :tournois
+    resources :tournois do
+      resources :inscriptions_tournois, only: [:update]
     end
   end
 
@@ -14,13 +14,12 @@ Rails.application.routes.draw do
     resources :inscriptions_tournois, only: %i[new create]
   end
 
-  # ou scope
-  namespace :admin do
-    resources :inscriptions_tournois, only: %i[index show]
+  scope :admin do
+    get '', to: 'pages#admin'
   end
 
   resources :tournois, only: %i[index new create destroy update]
-  resources :inscriptions_tournois
+  resources :inscriptions_tournois, only: %i[index]
 
   match '*path' => redirect('/'), via: :get
 end
