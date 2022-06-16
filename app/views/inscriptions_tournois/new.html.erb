@@ -1,0 +1,14 @@
+<div class="container pb-5 mb-5">
+  <h1>Inscription au tournoi <%= @tournoi.nom %> de <%= @tournoi.ville %></h1>
+  <%= simple_form_for [@tournoi, @inscriptions_tournoi] do |f| %>
+    <%= f.label @tournoi.nom %>
+    <%= f.input :simple, as: :boolean, :input_html => { :checked => "checked" } %>
+    <%= f.input :double, as: :boolean %>
+    <%= f.input :mixte, as: :boolean %>
+
+    <div class="text-center">
+      <%= link_to 'Retour à la liste des tournois', tournois_path, class: 'btn btn-primary mt-3'%>
+      <%= f.button :submit, "Je valide l'inscription", class: 'btn btn-primary mt-3'%>
+    </div>
+  <% end %>
+</div>

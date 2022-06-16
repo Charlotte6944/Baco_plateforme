@@ -2,6 +2,7 @@ class Tournoi < ApplicationRecord
   validates :nom, :ville, :date_debut_tournoi, :date_fin_tournoi, :inscription_max, :catégories, presence: true
   has_many :inscriptions_tournois, dependent: :destroy
   validate :inscription_max_before_date_tournoi
+  has_and_belongs_to_many :users, dependent: :destroy
 
   private
 

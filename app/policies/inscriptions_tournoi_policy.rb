@@ -14,7 +14,7 @@ class InscriptionsTournoiPolicy < ApplicationPolicy
   end
 
   def create?
-    true
+    user
   end
 
   def destroy?

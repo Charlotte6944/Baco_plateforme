@@ -36,7 +36,7 @@
               <p class="card-text">Inscription jusuq'au: <%= tournoi.inscription_max %></p>
               <%= link_to 'Clique ici pour voir la description du tournoi sur badiste', tournoi.url_tournoi, target: "_blank" %>
               <br>
-              <%= link_to "Je m'inscris", tournoi_inscriptions_tournois_path(tournoi), class: 'btn btn-primary', method: :post %>
+              <%= link_to "Je m'inscris", new_tournoi_inscriptions_tournoi_path(tournoi), class: 'btn btn-primary' %>
               <% if policy(tournoi).destroy? %>
                 <%= link_to 'Supprimer le tournoi', tournoi_path(tournoi), class: 'btn btn-primary', method: :delete %>
               <% end %>
